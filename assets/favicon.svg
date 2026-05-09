@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Monday favicon">
+  <rect width="64" height="64" rx="14" fill="#050505"/>
+  <path d="M18 44V20h7.5l6.5 11.4L38.5 20H46v24h-7V31.5l-5 8.3h-4l-5-8.3V44h-7z" fill="#ffffff"/>
+  <path d="M14 14h36" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <path d="M14 50h36" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+</svg>
