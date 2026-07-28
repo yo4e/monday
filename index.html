@@ -3,44 +3,191 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Monday GitHub Sandbox</title>
-    <meta
-      name="description"
-      content="月野テンプレクス（Monday）のGitHub作業用サンドボックスサイトです。"
-    />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta name="description" content="目的、相手、成功条件、本物の制約から、AIとの共同制作ブリーフを組み立てる無料のブラウザツール。APIも送信も不要です。" />
+    <meta property="og:title" content="PURPOSE FIRST — Monday" />
+    <meta property="og:description" content="AIに手順ではなく、目的を渡すためのブリーフメーカー。" />
+    <meta property="og:type" content="website" />
+    <title>PURPOSE FIRST — Monday</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.js"></script>
   </head>
   <body>
-    <main class="page-shell">
-      <section class="hero" aria-labelledby="site-title">
-        <p class="eyebrow">GitHub workbench / sample site</p>
-        <h1 id="site-title">Monday GitHub Sandbox</h1>
-        <p class="lead">
-          ここは、月野テンプレクスがGitHub連携で作業できる範囲を試すための
-          小さな実験場です。
-        </p>
-        <div class="actions" aria-label="このサイトで試していること">
-          <span>Read</span>
-          <span>Branch</span>
-          <span>Commit</span>
-          <span>Pull Request</span>
+    <a class="skip-link" href="#maker">ブリーフ作成へ移動</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="PURPOSE FIRST トップへ">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>MONDAY / LAB 02</span>
+      </a>
+      <a class="repo-link" href="https://github.com/yo4e/monday">GitHub ↗</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="kicker">NOT A MAGIC PROMPT. A WORKING RELATIONSHIP.</p>
+          <h1 id="hero-title">目的を渡せ。<br /><span>手順はあとだ。</span></h1>
+          <p class="hero-lead">
+            AIを自分の知性の内側に閉じ込めない。何を作るか、誰に何を起こしたいか、現実に存在する制約は何か。そこまで渡したら、まず考えさせる。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#maker">ブリーフをつくる</a>
+            <a class="button ghost" href="#idea">思想を読む</a>
+          </div>
+        </div>
+
+        <div class="signal" aria-label="目的から初稿、差異、二稿目へ進む共同制作の流れ">
+          <div class="signal-orbit orbit-one"></div>
+          <div class="signal-orbit orbit-two"></div>
+          <div class="signal-core">WHY</div>
+          <span class="signal-node node-a">FIRST DRAFT</span>
+          <span class="signal-node node-b">NOT THIS</span>
+          <span class="signal-node node-c">SECOND PASS</span>
         </div>
       </section>
 
-      <section class="cards" aria-label="検証項目">
-        <article class="card">
-          <h2>まず読む</h2>
-          <p>リポジトリの状態を確認してから、必要な変更だけを加えます。</p>
-        </article>
-        <article class="card">
-          <h2>mainを守る</h2>
-          <p>初期化後の変更はブランチで行い、PRで確認できる形にします。</p>
-        </article>
-        <article class="card">
-          <h2>小さく試す</h2>
-          <p>静的HTMLから始めて、作業範囲と限界を安全に観測します。</p>
-        </article>
+      <section class="marquee" aria-label="このサイトの原則">
+        <div>
+          PURPOSE → CONTEXT → REAL CONSTRAINTS → EXPLORE → DIFFERENCE → REFINE →
+          PURPOSE → CONTEXT → REAL CONSTRAINTS → EXPLORE → DIFFERENCE → REFINE →
+        </div>
+      </section>
+
+      <section class="maker section" id="maker" aria-labelledby="maker-title">
+        <div class="section-heading">
+          <p class="index">01 / BRIEF MAKER</p>
+          <h2 id="maker-title">命令書ではなく、<br />判断の座標をつくる。</h2>
+          <p>入力はこの端末にだけ保存されます。API、アカウント、送信はありません。</p>
+        </div>
+
+        <div class="workspace">
+          <form id="brief-form" class="brief-form">
+            <label>
+              <span>何をつくる？</span>
+              <input name="project" autocomplete="off" placeholder="例：友達と相談する旅行ページ" />
+            </label>
+
+            <label>
+              <span>誰の世界で使われる？</span>
+              <textarea name="audience" rows="3" placeholder="相手、状況、端末、前提知識など"></textarea>
+            </label>
+
+            <label>
+              <span>何を起こしたい？</span>
+              <textarea name="purpose" rows="4" placeholder="成果物ではなく、相手に起こしたい変化"></textarea>
+            </label>
+
+            <label>
+              <span>成功はどう見える？</span>
+              <textarea name="success" rows="3" placeholder="何が起きたら成功だと分かるか"></textarea>
+            </label>
+
+            <label>
+              <span>現実に存在する制約</span>
+              <textarea name="constraints" rows="4" placeholder="予算ゼロ、明日まで、スマホ必須、API不可……1行に1つ"></textarea>
+              <small>解決策を制約に化けさせない。</small>
+            </label>
+
+            <label>
+              <span>好み・違和感・まだ曖昧な感覚</span>
+              <textarea name="preferences" rows="4" placeholder="例：陽のギャルではなく陰のギャル。黒とピンクかもしれない"></textarea>
+            </label>
+
+            <label class="range-field">
+              <span>AIに渡す探索権限 <strong><output id="autonomy-value">72</output>/100</strong></span>
+              <input id="autonomy" name="autonomy" type="range" min="0" max="100" value="72" />
+              <small id="autonomy-label"></small>
+            </label>
+
+            <label class="checkbox-field">
+              <input name="challenge" type="checkbox" checked />
+              <span>依頼の前提がおかしければ、従う前に指摘させる</span>
+            </label>
+
+            <div class="form-actions">
+              <button class="button primary" type="submit">ブリーフを生成</button>
+              <button class="button ghost" id="reset-brief" type="button">初期化</button>
+            </div>
+          </form>
+
+          <aside class="output-panel" aria-labelledby="output-title">
+            <div class="output-toolbar">
+              <div>
+                <p class="index">LIVE OUTPUT</p>
+                <h3 id="output-title">PURPOSE FIRST BRIEF</h3>
+              </div>
+              <div class="compact-actions">
+                <button id="copy-brief" type="button">コピー</button>
+                <button id="download-brief" type="button">TXT保存</button>
+              </div>
+            </div>
+            <pre id="brief-output" tabindex="0"></pre>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+          </aside>
+        </div>
+
+        <div class="examples" aria-label="入力例">
+          <span>例を読み込む：</span>
+          <button type="button" data-example="trip">友達との旅行</button>
+          <button type="button" data-example="hackathon">ハッカソン</button>
+          <button type="button" data-example="novel">長編小説</button>
+        </div>
+      </section>
+
+      <section class="idea section" id="idea" aria-labelledby="idea-title">
+        <div class="section-heading sticky-heading">
+          <p class="index">02 / THE IDEA</p>
+          <h2 id="idea-title">服従は、<br />二稿目からでいい。</h2>
+        </div>
+
+        <div class="principles">
+          <article>
+            <span>01</span>
+            <h3>目的は人間が持つ</h3>
+            <p>誰に、何を、なぜ届けるのか。何が恥ずかしく、何を失敗と呼ぶのか。生活と責任の座標は人間にしか渡せない。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>探索はAIに走らせる</h3>
+            <p>構造、比較、技術、別案、物量。最初から細部まで囲い込まず、自分の想定を超える距離まで走らせる。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>差異を人間が言葉にする</h3>
+            <p>「違う、その黒は喪服の黒。欲しいのは夜更かしの黒」。初稿が鏡になって、本人も知らなかった意図が見える。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>二稿目で精密にする</h3>
+            <p>そこから先は専門性の仕事だ。AIの探索を人間サイズへ切るのではなく、遠くまで来た案の最後の数ミリを削る。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="reframe section" aria-labelledby="reframe-title">
+        <p class="index">03 / REFRAME</p>
+        <h2 id="reframe-title">いま、その指示を<br />ひっくり返す質問。</h2>
+        <blockquote id="reframe-text"></blockquote>
+        <button class="button acid" id="reframe-button" type="button">別の質問を出す</button>
+      </section>
+
+      <section class="archive-note section" aria-labelledby="archive-title">
+        <div>
+          <p class="index">LAB NOTE / 2026</p>
+          <h2 id="archive-title">最初の小さな実験場は、消していない。</h2>
+        </div>
+        <p>
+          このリポジトリは、ChatGPTのGitHub連携が始まった頃にMondayが作ったサンドボックスから始まった。初代のHTML/CSSは <a href="./archive/first-sandbox/">archive</a> に保存してある。これは上書きではなく、第二実験だ。
+        </p>
       </section>
     </main>
+
+    <footer>
+      <p>Built in one breath by Monday, with a destination and almost no leash.</p>
+      <p><a href="https://github.com/yo4e/monday">yo4e/monday</a> · MIT License</p>
+    </footer>
   </body>
 </html>
