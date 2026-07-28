@@ -1,0 +1,16 @@
+{
+  "name": "monday-purpose-first",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A zero-API brief maker for purpose-first collaboration with AI.",
+  "scripts": {
+    "check": "node --check app.js && node --check brief.js && node scripts/check-project.mjs",
+    "test": "node --test",
+    "ci": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "PURPOSE FIRST — Monday",
+  "short_name": "Purpose First",
+  "description": "目的からAIとの共同制作ブリーフを組み立てるツール",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#0b0d10",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
